@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Shortit</title>
+</head>
+<body>
+  <header>
+    <h1>
+      Now you can easily and fast customize your <strong>URL</strong> with Billy
+    <h1>  
+  </header>
+  <main id ="app">
+    <template>
+      <div v-if="error" class="error">
+        ⚠️  {{error}}  ⚠️
+      </div>  
+    <form clsss="form" v-if="!success" @submit.prevent="createUrl()">
+      <input v-model="url" class="input is-large " type="text" placeholder="Enter your url" required>
+      <input v-model="name" class="input is-large" type="text" placeholder="Enter your name " required>
+      <div class="my-button">
+        <button class="button" type="submit">Shorten</button>
+      </div>
+    </form>
+    <div v-if="success" class="title is-1" style = "text-align: center"> 
+      <a :href="'/' + name" target="_blank">https://Billy/{{name}}</a> 
+      <br>
+      <br>
+      <button class="success-button" v-on:click="createQR()" >Generate QR</button>
+      <button class="success-button" v-on:click="reset()">Shorten another</button>
+      
+      <div class="qr-code" v-if="success && qrSuccess">
+        <img :src="`data:image/png;base64,${encodedImage}`" />
+      </div>
+
+    </div>
+  </template>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="main.js"></script>
+</body>
+</html>
