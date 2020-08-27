@@ -6,7 +6,8 @@ A demo application for a simple URL shortener service
 
 ## How it works
 
-
+Everyime that you short a url you need to pass the url and your preferred name. After that you can either retrieve it either generate a QR code for this url.
+Because the application runs on localhost, in order to retrive the url you have to access the end point http://localhost:5000/YOUR_KEYWORD. If you run it on a server you can retrieve your url as https://Billy/YOUR_KEYWORD
 
 
 ## Quick Start
@@ -45,3 +46,7 @@ $ npm run test
 The latter command will execute all tests automatically whenever a change is detected.
 
 ---
+
+## License
+
+MIT
