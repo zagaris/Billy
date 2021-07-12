@@ -7,22 +7,29 @@ A demo application for a simple URL shortener service
 ## How it works
 
 Everyime that you short a url you need to send the url and your preferred name. After that you can retrieve it or generate a QR code for the new url.
-Because the application runs on localhost, in order to retrieve the url you have to access the end point http://localhost:5000/YOUR_KEYWORD. If you run it on a server you can retrieve your url as https://Billy/YOUR_KEYWORD
+Because the application runs on localhost, in order to retrieve the url you have to access the end point http://localhost:5000/YOUR_KEYWORD. If you run it on a server you can retrieve your url as https://Billy/YOUR_KEYWORD.
 
 
 ## Quick Start
 
-Clone the repo and install the dependencies.
+Clone the repo.
 
 ```bash
 https://github.com/zagaris/Billy.git
 cd Billy/server
 ```
+Create the .env file.
+
+```bash
+DB_URL=localhost/billy
+TEST_DB_URL=localhost/billy-test
+```
+Install the dependencies.
 
 ```bash
 npm install
 ```
-To start the express server, run the following
+To start the express server, run the following.
 
 ```bash
 npm run dev
@@ -46,6 +53,11 @@ $ npm run test
 The latter command will execute all tests automatically whenever a change is detected.
 
 ---
+
+## Preview
+
+
+<img src="Billy.gif" width="650" height="450">
 
 ## License
 
